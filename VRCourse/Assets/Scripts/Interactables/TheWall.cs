@@ -42,6 +42,10 @@ public class TheWall : MonoBehaviour
     [SerializeField]
     int maxPower = 2000;
 
+    [SerializeField]
+    AudioClip destoryWallClip;
+
+    public AudioClip GetDestroyClip => destoryWallClip;
 
     Vector3 cubeSize;
     Vector3 spawnPos;
