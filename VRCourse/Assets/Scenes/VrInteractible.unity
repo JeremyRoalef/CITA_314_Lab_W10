@@ -8731,8 +8731,12 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+  OnHingeSelected:
+    m_PersistentCalls:
+      m_Calls: []
   positionLimits: {x: 0.15, y: 0.15, z: 0.15}
   isLocked: 0
+  hingeMoveClip: {fileID: 0}
   OnOpen:
     m_PersistentCalls:
       m_Calls:
@@ -28184,6 +28188,11 @@ MonoBehaviour:
   destoryWallClip: {fileID: 0}
   fallBackClip: {fileID: 0}
   wallSocketClip: {fileID: 0}
+  cabinetDoors:
+  - {fileID: 7232470889033644071}
+  - {fileID: 8471264458306538213}
+  cabinetDoorSound: []
+  cabinetDoorMoveClip: {fileID: 0}
 --- !u!1001 &964707686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57833,15 +57842,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968713546}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.72347677, z: -0, w: 0.6903488}
-  m_LocalPosition: {x: 1.34, y: 0.452, z: 2.78}
+  m_LocalRotation: {x: -0, y: -0.6903486, z: -0, w: -0.7234769}
+  m_LocalPosition: {x: 7.214, y: 0.452, z: 1.913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 447080506}
   - {fileID: 676949598}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -92.685, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -272.685, z: 0}
 --- !u!1001 &1974881767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69059,8 +69068,12 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+  OnHingeSelected:
+    m_PersistentCalls:
+      m_Calls: []
   positionLimits: {x: 0.15, y: 0.15, z: 0.15}
   isLocked: 1
+  hingeMoveClip: {fileID: 8300000, guid: a9111467000a3ba4aa985d1aa06805c1, type: 3}
   OnOpen:
     m_PersistentCalls:
       m_Calls: []
@@ -70629,8 +70642,12 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+  OnHingeSelected:
+    m_PersistentCalls:
+      m_Calls: []
   positionLimits: {x: 0.15, y: 0.15, z: 0.15}
   isLocked: 1
+  hingeMoveClip: {fileID: 8300000, guid: a9111467000a3ba4aa985d1aa06805c1, type: 3}
   OnOpen:
     m_PersistentCalls:
       m_Calls: []

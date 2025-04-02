@@ -1,16 +1,23 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
 public abstract class SimpleHingeInteractable : XRSimpleInteractable
 {
+    public UnityEvent<SimpleHingeInteractable> OnHingeSelected;
+
     //Serialized Fields
     [SerializeField]
     Vector3 positionLimits;
 
     [SerializeField]
     bool isLocked = true;
+
+    [SerializeField]
+    AudioClip hingeMoveClip;
+    public AudioClip GetHingeMoveClip => hingeMoveClip;
 
     //Cashe References
     Transform grabHand;
@@ -46,6 +53,7 @@ public abstract class SimpleHingeInteractable : XRSimpleInteractable
         {
             base.OnSelectEntered(args);
             grabHand = args.interactorObject.transform;
+            OnHingeSelected?.Invoke(this);
         }
     }
 

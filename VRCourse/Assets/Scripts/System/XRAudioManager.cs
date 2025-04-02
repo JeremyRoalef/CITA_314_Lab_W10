@@ -74,6 +74,18 @@ public class XRAudioManager : MonoBehaviour
     [SerializeField]
     AudioClip wallSocketClip;
 
+
+    [Header("Hinge Interactables")]
+
+    [SerializeField]
+    SimpleHingeInteractable[] cabinetDoors = new SimpleHingeInteractable[2];
+
+    [SerializeField]
+    AudioSource[] cabinetDoorSound;
+
+    [SerializeField]
+    AudioClip cabinetDoorMoveClip;
+
     const string FALL_BACK_CLIP = "fallBackClip";
 
 
@@ -99,6 +111,16 @@ public class XRAudioManager : MonoBehaviour
         {
             SetWall();
         }
+
+        //Cabinet Doors
+        cabinetDoorSound = new AudioSource[cabinetDoors.Length];
+        for (int i = 0; i < cabinetDoors.Length; ++i)
+        {
+            if (cabinetDoors[i] != null)
+            {
+                SetCabinetDoors(i);
+            }
+        }
     }
 
     private void OnDisable()
@@ -106,6 +128,39 @@ public class XRAudioManager : MonoBehaviour
         if (wall != null)
         {
             wall.OnDestroy.RemoveListener(OnDestroyWall);
+        }
+    }
+
+    void SetCabinetDoors(int index)
+    {
+        cabinetDoorSound[index] = cabinetDoors[index].transform.AddComponent<AudioSource>();
+        cabinetDoorMoveClip = cabinetDoors[index].GetHingeMoveClip;
+        CheckIfClipIsNull(ref cabinetDoorMoveClip);
+        cabinetDoorSound[index].clip = cabinetDoorMoveClip;
+
+        cabinetDoors[index].OnHingeSelected.AddListener(OnDoorMove);
+        cabinetDoors[index].selectExited.AddListener(OnDoorStop);
+    }
+
+    private void OnDoorStop(SelectExitEventArgs arg0)
+    {
+        for (int i = 0; i < cabinetDoors.Length; i++)
+        {
+            if (arg0.interactableObject == cabinetDoors[i])
+            {
+                cabinetDoorSound[i].Stop();
+            }
+        }
+    }
+
+    private void OnDoorMove(SimpleHingeInteractable arg0)
+    {
+        for (int i = 0; i < cabinetDoors.Length; i++)
+        {
+            if (arg0 == cabinetDoors[i])
+            {
+                cabinetDoorSound[i].Play();
+            }
         }
     }
 
