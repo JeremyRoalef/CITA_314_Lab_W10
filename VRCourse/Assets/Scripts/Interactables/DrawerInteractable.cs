@@ -24,6 +24,11 @@ public class DrawerInteractable : XRGrabInteractable
     [SerializeField]
     float maxZPos = 0.9f;
 
+    [SerializeField]
+    AudioClip drawerMoveClip;
+
+    public AudioClip GetMoveClip => drawerMoveClip;
+
     //Cashe References
     Transform parentTransform;
     Vector3 limitPositions;
