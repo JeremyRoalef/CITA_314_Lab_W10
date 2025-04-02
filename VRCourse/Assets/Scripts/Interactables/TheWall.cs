@@ -47,11 +47,16 @@ public class TheWall : MonoBehaviour
 
     public AudioClip GetDestroyClip => destoryWallClip;
 
+    [SerializeField]
+    AudioClip socketClip;
+    public AudioClip GetSocketClip => socketClip;
+
     Vector3 cubeSize;
     Vector3 spawnPos;
     GameObject[] wallCubes;
     [SerializeField]
     XRSocketInteractor wallSocket;
+    public XRSocketInteractor GetWallSocket => wallSocket;
 
     [SerializeField]
     ExplosiveDevice explosiveDevice;

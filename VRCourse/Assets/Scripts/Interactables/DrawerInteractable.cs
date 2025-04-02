@@ -9,6 +9,7 @@ public class DrawerInteractable : XRGrabInteractable
     
     [SerializeField]
     XRSocketInteractor socketInteractor;
+    public XRSocketInteractor GetSocketIntractor => socketInteractor;
 
     [SerializeField]
     Transform drawerTransform;
@@ -28,6 +29,10 @@ public class DrawerInteractable : XRGrabInteractable
     AudioClip drawerMoveClip;
 
     public AudioClip GetMoveClip => drawerMoveClip;
+
+    [SerializeField]
+    AudioClip socketedClip;
+    public AudioClip GetSocketedClip => socketedClip;
 
     //Cashe References
     Transform parentTransform;

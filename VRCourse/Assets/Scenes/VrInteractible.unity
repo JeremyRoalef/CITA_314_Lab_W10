@@ -10103,6 +10103,7 @@ MonoBehaviour:
   destroyWall: 0
   maxPower: 9999
   destoryWallClip: {fileID: 8300000, guid: 966117de60fa8db4a9fc27cd9f180bba, type: 3}
+  socketClip: {fileID: 8300000, guid: 79f0548b92e2b2c48a00514b4f9aa04a, type: 3}
   wallSocket: {fileID: 288811780}
   explosiveDevice: {fileID: 1053230030}
 --- !u!4 &331346950
@@ -28171,12 +28172,18 @@ MonoBehaviour:
   grabActivatedClip: {fileID: 8300000, guid: a7d20e9f23bd7cc449823e482e098902, type: 3}
   wandActivatedClip: {fileID: 8300000, guid: 79f0548b92e2b2c48a00514b4f9aa04a, type: 3}
   drawer: {fileID: 7529789951785818473}
+  drawerSocket: {fileID: 0}
   drawerSound: {fileID: 0}
+  drawerSocketSound: {fileID: 0}
   drawerMoveClip: {fileID: 0}
+  drawerSocketClip: {fileID: 0}
   wall: {fileID: 331346949}
+  wallSocket: {fileID: 0}
   wallSound: {fileID: 0}
+  wallSocketSound: {fileID: 0}
   destoryWallClip: {fileID: 0}
   fallBackClip: {fileID: 0}
+  wallSocketClip: {fileID: 0}
 --- !u!1001 &964707686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57826,15 +57833,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968713546}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7933534, z: -0, w: -0.6087615}
-  m_LocalPosition: {x: 2.768, y: 0.452, z: 14.811}
+  m_LocalRotation: {x: -0, y: -0.72347677, z: -0, w: 0.6903488}
+  m_LocalPosition: {x: 1.34, y: 0.452, z: 2.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 447080506}
   - {fileID: 676949598}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -255, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -92.685, z: 0}
 --- !u!1001 &1974881767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69645,6 +69652,7 @@ MonoBehaviour:
   isLocked: 0
   maxZPos: 0.9
   drawerMoveClip: {fileID: 8300000, guid: 5a473077dfada7641998c47c8e78f28e, type: 3}
+  socketedClip: {fileID: 8300000, guid: 256bdb10da09c744f86381dce72934e6, type: 3}
 --- !u!1 &7584415454913489663
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,11 +37,19 @@ public class XRAudioManager : MonoBehaviour
     DrawerInteractable drawer;
 
     [SerializeField]
+    XRSocketInteractor drawerSocket;
+
+    [SerializeField]
     AudioSource drawerSound;
+
+    [SerializeField]
+    AudioSource drawerSocketSound;
 
     [SerializeField]
     AudioClip drawerMoveClip;
 
+    [SerializeField]
+    AudioClip drawerSocketClip;
 
     [Header("The Wall")]
 
@@ -49,13 +57,23 @@ public class XRAudioManager : MonoBehaviour
     TheWall wall;
 
     [SerializeField]
+    XRSocketInteractor wallSocket;
+
+    [SerializeField]
     AudioSource wallSound;
+
+    [SerializeField]
+    AudioSource wallSocketSound;
 
     [SerializeField]
     AudioClip destoryWallClip;
 
     [SerializeField]
     AudioClip fallBackClip;
+
+    [SerializeField]
+    AudioClip wallSocketClip;
+
     const string FALL_BACK_CLIP = "fallBackClip";
 
 
@@ -162,8 +180,23 @@ public class XRAudioManager : MonoBehaviour
     private void SetWall()
     {
         destoryWallClip = wall.GetDestroyClip;
-        CheckIfClipIsNull(destoryWallClip);
+        CheckIfClipIsNull(ref destoryWallClip);
         wall.OnDestroy.AddListener(OnDestroyWall);
+
+        wallSocket = wall.GetWallSocket;
+        if (wallSocket != null)
+        {
+            wallSocketSound = wallSocket.transform.AddComponent<AudioSource>();
+            wallSocketClip = wall.GetSocketClip;
+            CheckIfClipIsNull(ref wallSocketClip);
+            wallSocketSound.clip = wallSocketClip;
+            wallSocket.selectEntered.AddListener(OnWallSocketed);
+        }
+    }
+
+    private void OnWallSocketed(SelectEnterEventArgs arg0)
+    {
+        wallSocketSound.Play();
     }
 
     private void SetDrawerInteractable()
@@ -171,16 +204,42 @@ public class XRAudioManager : MonoBehaviour
         //Set up audio source
         drawerSound = drawer.transform.AddComponent<AudioSource>();
         drawerMoveClip = drawer.GetMoveClip;
-        CheckIfClipIsNull(drawerMoveClip);
+        CheckIfClipIsNull(ref drawerMoveClip);
 
         drawerSound.clip = drawerMoveClip;
         drawerSound.loop = true;
 
         drawer.selectEntered.AddListener(OnDrawerMove);
         drawer.selectExited.AddListener(OnDrawerStop);
+
+        drawerSocket = drawer.GetSocketIntractor;
+        if (drawerSocket != null)
+        {
+            drawerSocketSound = drawerSocket.transform.AddComponent<AudioSource>();
+            drawerSocket.selectEntered.AddListener(OnDrawerSocketed);
+            drawerSocketClip = drawer.GetSocketedClip;
+            CheckIfClipIsNull(ref drawerSocketClip);
+            drawerSound.clip = drawerSocketClip;
+
+        }
     }
 
-    void CheckIfClipIsNull(AudioClip clip)
+    private void OnDrawerSocketed(SelectEnterEventArgs arg0)
+    {
+        drawerSocketSound.Play();
+    }
+
+    /*
+     * Using ref in the parameter passes the exact reference of the given argument. Without it,
+     * changing the reference inside the function will not chage the reference outside the function.
+     * The parameter is referencing the same object in memory as the passed argument reference, but they
+     * are different references. Using ref means passing the exact reference to the function, meaning
+     * changes to the parameter reference will change the argument's reference too.
+     * 
+     * This also means that when you call the function, you need to add ref before passing the argument
+     * (CheckIfClipIsNull(ref myAudioClip))
+     */
+    void CheckIfClipIsNull(ref AudioClip clip)
     {
         if (clip == null)
         {
