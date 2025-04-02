@@ -7,6 +7,8 @@ public class CombinationLock : MonoBehaviour
 {
     //Actions. Unlike UnityEvent, UnityAction is more specific to scripting purposes only
     public UnityAction UnlockAction;
+    public UnityAction ComboButtonPressed;
+    void OnComboButtonPress() => ComboButtonPressed?.Invoke();
     void OnUnlocked() => UnlockAction?.Invoke();
     /*
      void OnUnlocked(){
@@ -37,6 +39,21 @@ public class CombinationLock : MonoBehaviour
 
     [SerializeField]
     bool isLocked = true;
+
+
+    [Header("Audio")]
+
+    [SerializeField]
+    AudioClip lockComboClip;
+    public AudioClip GetLockClip => lockComboClip;
+
+    [SerializeField]
+    AudioClip unlockComboClip;
+    public AudioClip GetUnlockClip => unlockComboClip;
+
+    [SerializeField]
+    AudioClip comboButtonPressedClip;
+    public AudioClip GetComboPressedClip => comboButtonPressedClip;
 
     [Header("Colors")]
 
@@ -76,6 +93,10 @@ public class CombinationLock : MonoBehaviour
                 if (userInput.Length == numberCombination.Length)
                 {
                     CheckCombination();
+                }
+                else
+                {
+                    OnComboButtonPress();
                 }
             }
             //Reset the color of other objects to normal color when button is pressed

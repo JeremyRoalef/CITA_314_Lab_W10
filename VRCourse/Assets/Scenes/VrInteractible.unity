@@ -19555,6 +19555,9 @@ MonoBehaviour:
   - {fileID: 1056581078}
   textInput: {fileID: 1153786299}
   isLocked: 1
+  lockComboClip: {fileID: 8300000, guid: a7d20e9f23bd7cc449823e482e098902, type: 3}
+  unlockComboClip: {fileID: 8300000, guid: dff3014fa4e23374685962fafb39949f, type: 3}
+  comboButtonPressedClip: {fileID: 8300000, guid: 256bdb10da09c744f86381dce72934e6, type: 3}
   unlockedButtonColor: {r: 0, g: 1, b: 0, a: 1}
   incorrectComboButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &701791831
@@ -28181,6 +28184,16 @@ MonoBehaviour:
   drawerSocketSound: {fileID: 0}
   drawerMoveClip: {fileID: 0}
   drawerSocketClip: {fileID: 0}
+  cabinetDoors:
+  - {fileID: 7232470889033644071}
+  - {fileID: 8471264458306538213}
+  cabinetDoorSound: []
+  cabinetDoorMoveClip: {fileID: 0}
+  comboLock: {fileID: 701791830}
+  comboLockSound: {fileID: 0}
+  lockComboClip: {fileID: 0}
+  unlockComboClip: {fileID: 0}
+  comboButtonPressedClip: {fileID: 0}
   wall: {fileID: 331346949}
   wallSocket: {fileID: 0}
   wallSound: {fileID: 0}
@@ -28188,11 +28201,6 @@ MonoBehaviour:
   destoryWallClip: {fileID: 0}
   fallBackClip: {fileID: 0}
   wallSocketClip: {fileID: 0}
-  cabinetDoors:
-  - {fileID: 7232470889033644071}
-  - {fileID: 8471264458306538213}
-  cabinetDoorSound: []
-  cabinetDoorMoveClip: {fileID: 0}
 --- !u!1001 &964707686
 PrefabInstance:
   m_ObjectHideFlags: 0
