@@ -251,6 +251,9 @@ public class XRAudioManager : MonoBehaviour
 
     private void OnDrawerMove(SelectEnterEventArgs arg0)
     {
+        //if(drawerRb.velocity.magnitude > 0 {drawerSound.Play();})
+        //else {drawerSound.Stop();}
+
         drawerSound.Play();
     }
     void SetGrabbables()
@@ -271,6 +274,8 @@ public class XRAudioManager : MonoBehaviour
     {
         destoryWallClip = wall.GetDestroyClip;
         CheckIfClipIsNull(ref destoryWallClip);
+        wallSound = wall.transform.AddComponent<AudioSource>();
+        wallSound.clip = destoryWallClip;
         wall.OnDestroy.AddListener(OnDestroyWall);
 
         wallSocket = wall.GetWallSocket;
@@ -299,6 +304,7 @@ public class XRAudioManager : MonoBehaviour
         drawerSound.clip = drawerMoveClip;
         drawerSound.loop = true;
 
+        //When the drawer is grabbed, play the sound. When the drawer is not grabbed, stop playing the sound
         drawer.selectEntered.AddListener(OnDrawerMove);
         drawer.selectExited.AddListener(OnDrawerStop);
 
@@ -309,7 +315,7 @@ public class XRAudioManager : MonoBehaviour
             drawerSocket.selectEntered.AddListener(OnDrawerSocketed);
             drawerSocketClip = drawer.GetSocketedClip;
             CheckIfClipIsNull(ref drawerSocketClip);
-            drawerSound.clip = drawerSocketClip;
+            drawerSocketSound.clip = drawerSocketClip;
 
         }
     }

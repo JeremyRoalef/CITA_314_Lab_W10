@@ -8736,7 +8736,7 @@ MonoBehaviour:
       m_Calls: []
   positionLimits: {x: 0.15, y: 0.15, z: 0.15}
   isLocked: 0
-  hingeMoveClip: {fileID: 0}
+  hingeMoveClip: {fileID: 8300000, guid: a9111467000a3ba4aa985d1aa06805c1, type: 3}
   OnOpen:
     m_PersistentCalls:
       m_Calls:
@@ -10045,7 +10045,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDestroy:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 227793897}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   columns: 7
   rows: 4
   wallCubePrefab: {fileID: 116418561456166111, guid: 07db4e4b7317ae94b92d16eb095b1fad, type: 3}
@@ -10123,7 +10135,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1664436225}
   - {fileID: 388922242}
   - {fileID: 129146389}
   - {fileID: 1151214823}
@@ -28179,28 +28190,14 @@ MonoBehaviour:
   grabActivatedClip: {fileID: 8300000, guid: a7d20e9f23bd7cc449823e482e098902, type: 3}
   wandActivatedClip: {fileID: 8300000, guid: 79f0548b92e2b2c48a00514b4f9aa04a, type: 3}
   drawer: {fileID: 7529789951785818473}
-  drawerSocket: {fileID: 0}
-  drawerSound: {fileID: 0}
-  drawerSocketSound: {fileID: 0}
-  drawerMoveClip: {fileID: 0}
-  drawerSocketClip: {fileID: 0}
   cabinetDoors:
   - {fileID: 7232470889033644071}
   - {fileID: 8471264458306538213}
-  cabinetDoorSound: []
-  cabinetDoorMoveClip: {fileID: 0}
+  - {fileID: 290864424}
   comboLock: {fileID: 701791830}
-  comboLockSound: {fileID: 0}
-  lockComboClip: {fileID: 0}
-  unlockComboClip: {fileID: 0}
-  comboButtonPressedClip: {fileID: 0}
   wall: {fileID: 331346949}
-  wallSocket: {fileID: 0}
   wallSound: {fileID: 0}
-  wallSocketSound: {fileID: 0}
-  destoryWallClip: {fileID: 0}
   fallBackClip: {fileID: 0}
-  wallSocketClip: {fileID: 0}
 --- !u!1001 &964707686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49881,134 +49878,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3329766, y: 1, z: 2.022745}
   m_Center: {x: 0.00042827797, y: -7.644411e-10, z: -0.111474775}
---- !u!1 &1664436223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1664436225}
-  - component: {fileID: 1664436224}
-  m_Layer: 0
-  m_Name: AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1664436224
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664436223}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 966117de60fa8db4a9fc27cd9f180bba, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1664436225
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664436223}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 331346950}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1664969960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57850,15 +57719,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968713546}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.6903486, z: -0, w: -0.7234769}
-  m_LocalPosition: {x: 7.214, y: 0.452, z: 1.913}
+  m_LocalRotation: {x: -0, y: -0.99972564, z: -0, w: -0.023425922}
+  m_LocalPosition: {x: 0.81, y: 0.452, z: -11.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 447080506}
   - {fileID: 676949598}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -272.685, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -182.685, z: 0}
 --- !u!1001 &1974881767
 PrefabInstance:
   m_ObjectHideFlags: 0
